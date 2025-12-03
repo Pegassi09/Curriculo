@@ -22,6 +22,3 @@ Este repositório contém o código-fonte do meu currículo profissional, desenv
 ## 🚀 Como Executar
 
 [ABRA O LINK DO REPOSITORIO ](https://pegassi09.github.io/Curriculo/)
-
-
-## 📸 Estrutura de Pastas
