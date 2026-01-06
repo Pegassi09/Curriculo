@@ -34,7 +34,8 @@ ul { padding-left: 20px; margin-bottom: 10px; }
 
 .container {
     display: flex;
-    width: 21cm;
+    width: 100%;
+    max-width: 21cm;
     min-height: 29.7cm;
     margin: 20px auto;
     background-color: #ffffff;
@@ -42,6 +43,7 @@ ul { padding-left: 20px; margin-bottom: 10px; }
 }
 
 .coluna-principal { flex: 2; padding: 30px; }
+
 .coluna-lateral {
     flex: 1;
     padding: 30px;
@@ -49,13 +51,16 @@ ul { padding-left: 20px; margin-bottom: 10px; }
 }
 
 .experiencia .projeto,
-.formacao .curso { margin-bottom: 20px; }
+.formacao .curso {
+    margin-bottom: 20px;
+}
 
 .projeto-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
     margin-bottom: 5px;
+    flex-wrap: wrap;
 }
 
 .data {
@@ -68,7 +73,8 @@ ul { padding-left: 20px; margin-bottom: 10px; }
 
 .coluna-principal section { margin-bottom: 25px; }
 
-img{
+img {
+    border-radius: 5px;
     max-width: 100%;
     height: auto;
     display: block;
@@ -79,10 +85,11 @@ img{
     width: 150px;
     height: 200px;
     border-radius: 5px;
-    margin: 0 auto 20px auto;
+    margin: 0 auto auto;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .identidade h1 {
@@ -101,13 +108,42 @@ img{
 }
 
 .coluna-lateral section { margin-bottom: 25px; }
-.coluna-lateral h2 { font-size: 14pt; border-bottom-width: 1px; }
+.coluna-lateral h2 { font-size: 12pt; border-bottom-width: 1px; }
 .coluna-lateral ul { list-style-type: none; padding-left: 0; }
 .coluna-lateral li { margin-bottom: 8px; }
 .habilidades li { font-size: 10.5pt; }
 .habilidades strong { color: #001F3F; }
 
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        margin: 0;
+        box-shadow: none;
+        min-height: auto;
+    }
+
+    .coluna-principal, .coluna-lateral {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .coluna-lateral {
+        background-color: #f0f4f8;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .projeto-header {
+        flex-direction: column;
+    }
+
+    .data {
+        padding-left: 0;
+        margin-bottom: 5px;
+    }
+}
+
 @media print {
-    .container { margin: 0; box-shadow: none; width: 100%; }
+    .container { margin: 0; box-shadow: none; width: 100%; max-width: none; }
     .coluna-lateral { background-color: #ffffff; }
+    body { background-color: #fff; }
 }
